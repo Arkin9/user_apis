@@ -57,7 +57,7 @@ ROOT_URLCONF = 'user_apis.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR, 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -106,7 +106,7 @@ AUTH_USER_MODEL  = 'user.User'
 
 AUTHENTICATION_BACKENDS  = [
     'user.backends.CustomAuthBackend',
-     'django.contrib.auth.backends.ModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 # Internationalization
@@ -130,3 +130,16 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+FRONTEND_URL = 'http://127.0.0.1:8000'
+
+# SMTP Email configurations
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST_USER = '04it2017@gmail.com'
+EMAIL_HOST_PASSWORD = 'pyze ethr abar iuss'
+DEFAULT_FROM_EMAIL = 'admin@user_apis.com'
